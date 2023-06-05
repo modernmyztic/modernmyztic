@@ -1,0 +1,49 @@
+
+$menu-hover-color: #777; 
+
+#desktop-navigation {
+
+  position: absolute;
+  z-index: 1000;
+  max-width: 1200px;
+  top: 10px;
+  margin: 0 auto; left:0px; right:0px;
+  float: clear;
+
+
+  ul {
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  li{
+    // float: left;
+    flex: flex-grow;
+    list-style-type: none;
+  }
+
+
+  a {
+    font-family: 'Raleway', sans-serif !important;
+    text-transform: uppercase;
+    // position:fixed;
+    display: inline-block;
+    padding: 0 25px;
+    // width:90px;
+    height:24px;
+    font-size: 14px;
+    top:10px;
+    left:10px;
+    text-align:center;
+    color:#fff;
+    border-radius:3px;
+    z-index:31
+    }
+
+  a:hover{
+    background: $menu-hover-color;
+    }
+
+  }

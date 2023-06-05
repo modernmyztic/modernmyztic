@@ -1,0 +1,97 @@
+@mixin iphone4-landscape {
+@media only screen 
+  and (min-device-width: 320px) 
+    and (max-device-width: 480px)
+      and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: landscape) {
+    @content;
+ }
+}
+
+@mixin iphone4-portrait {
+@media only screen 
+  and (min-device-width: 320px) 
+    and (max-device-width: 480px)
+      and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: portrait) {
+    @content;
+ }
+}
+
+@mixin iphone5-landscape {
+  @media only screen 
+    and (min-device-width: 320px) 
+      and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2)
+          and (orientation: landscape) {
+    @content;
+ }
+}
+
+@mixin iphone5-portrait {
+  @media only screen 
+    and (min-device-width: 320px) 
+      and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2)
+          and (orientation: portrait) {
+    @content;
+ }
+}
+
+@mixin iphone6-portrait {
+  @media only screen 
+  and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+      and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: portrait) { 
+    @content;
+  }
+}
+
+@mixin iphone6-landscape {
+  @media only screen 
+  and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+      and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: landscape) { 
+    @content;
+  }
+}
+
+@mixin samsung5-portrait {
+  @media only screen 
+  and (device-width: 360px) 
+    and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 3) 
+        and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin samsung5-landscape {
+  @media only screen 
+  and (device-width: 360px) 
+    and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 3) 
+        and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin ipad-landscape {
+  @media only screen 
+  and (device-width: 768px) 
+    and (device-height: 1024px) 
+        and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin ipad-portrait{
+  @media only screen 
+  and (device-width: 768px) 
+    and (device-height: 1024px) 
+        and (orientation: portrait) {
+    @content;
+  }
+}
