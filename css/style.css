@@ -1,0 +1,570 @@
+/* ===========================
+   CANVAS SKY
+=========================== */
+
+#sky{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+z-index:2;
+
+opacity:.75;
+
+mix-blend-mode:screen;
+
+}
+
+/* ---------- RESET ---------- */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#05050A;
+
+color:white;
+
+font-family:Manrope,sans-serif;
+
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+
+height:100vh;
+
+position:relative;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background-image:
+
+linear-gradient(
+
+rgba(5,5,10,.35),
+
+rgba(5,5,10,.70)
+
+),
+
+url("../images/hero-galaxy.webp");
+
+background-size:cover;
+
+background-position:center;
+
+animation:heroZoom 35s ease-in-out infinite alternate;
+
+}
+.hero-moon{
+
+width:55px;
+height:55px;
+
+margin:0 auto 25px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle at 30% 25%,
+#ffffff 0%,
+#fef8da 22%,
+#ebe8d2 55%,
+#cfcfcf 82%,
+#bdbdbd 100%);
+
+box-shadow:
+0 0 18px rgba(255,255,255,.45),
+0 0 45px rgba(180,210,255,.22);
+
+position:relative;
+
+animation:moonPulse 10s ease-in-out infinite;
+
+}
+/* ===========================
+   MOON
+=========================== */
+
+.moon{
+
+position:absolute;
+
+/* Adjust these later if needed */
+top:11%;
+left:50%;
+
+transform:translateX(-50%);
+
+width:90px;
+height:90px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle at 30% 30%,
+#ffffff 0%,
+#F8F7D4 35%,
+#d7d7d7 70%,
+#c7c7c7 100%);
+
+box-shadow:
+0 0 25px rgba(255,255,255,.45),
+0 0 60px rgba(180,210,255,.30),
+0 0 120px rgba(130,170,255,.18);
+
+animation:
+moonPulse 10s ease-in-out infinite;
+
+z-index:3;
+
+}
+.moon::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+top:50%;
+
+transform:translate(-50%,-50%);
+
+width:180px;
+height:180px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,
+rgba(150,190,255,.18),
+rgba(150,190,255,.08),
+transparent 72%);
+
+filter:blur(15px);
+
+}
+.moon::after{
+
+content:"";
+
+position:absolute;
+
+width:16px;
+height:16px;
+
+border-radius:50%;
+
+background:rgba(180,180,180,.18);
+
+top:22px;
+left:28px;
+
+box-shadow:
+18px 22px rgba(170,170,170,.12),
+-15px 35px rgba(200,200,200,.10),
+25px -8px rgba(180,180,180,.08);
+
+}
+
+/* ---------- NAV ---------- */
+
+nav{
+
+position:fixed;
+
+top:24px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:min(92%,1500px);
+
+padding:20px 42px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(20,20,28,.45);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 0 40px rgba(0,0,0,.35);
+
+border-radius:80px;
+
+transition:.4s;
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-family:Cinzel;
+
+letter-spacing:4px;
+
+font-size:20px;
+
+color:#E6C46E;
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+nav a:hover{
+
+color:#E6C46E;
+
+}
+
+/* ---------- HERO CONTENT ---------- */
+
+.hero-content{
+
+text-align:center;
+
+max-width:700px;
+
+padding:20px;
+
+animation:fadeUp 2s ease;
+
+position:relative;
+
+top:-70px;
+
+z-index:5;
+
+}
+
+.hero-symbol{
+
+font-size:30px;
+
+color:#E6C46E;
+
+margin-bottom:25px;
+
+}
+
+.hero h1{
+
+font-family:Cinzel;
+
+font-size:72px;
+
+letter-spacing:8px;
+
+margin-bottom:15px;
+
+}
+
+.hero h2{
+
+font-family:"Cormorant Garamond";
+
+font-size:42px;
+
+font-weight:300;
+
+margin-bottom:30px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+line-height:1.8;
+
+margin-bottom:45px;
+
+color:#EEEEEE;
+
+}
+
+.button{
+
+display:inline-block;
+
+padding:18px 42px;
+
+border-radius:60px;
+
+text-decoration:none;
+
+background:#E6C46E;
+
+color:#111;
+
+font-weight:bold;
+
+box-shadow:
+
+0 0 15px rgba(230,196,110,.4),
+
+0 0 40px rgba(230,196,110,.2);
+
+animation:
+
+buttonGlow 4s infinite;
+
+transition:.4s;
+
+}
+
+.button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 0 45px rgba(230,196,110,.8);
+
+}
+
+/* ---------- SCROLL ---------- */
+
+.scroll{
+
+position:absolute;
+
+bottom:40px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:34px;
+
+animation:float 2s infinite;
+
+opacity:.8;
+
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes float{
+
+0%{
+
+transform:translate(-50%,0px);
+
+}
+
+50%{
+
+transform:translate(-50%,10px);
+
+}
+
+100%{
+
+transform:translate(-50%,0px);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+@keyframes heroZoom{
+
+0%{
+
+background-size:100%;
+background-position:center;
+
+}
+
+50%{
+
+background-size:106%;
+background-position:center 52%;
+
+}
+
+100%{
+
+background-size:112%;
+background-position:center;
+
+}
+
+}
+@keyframes buttonGlow{
+
+0%{
+
+box-shadow:
+
+0 0 10px rgba(230,196,110,.3),
+
+0 0 25px rgba(230,196,110,.2);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 25px rgba(230,196,110,.8),
+
+0 0 70px rgba(230,196,110,.4);
+
+}
+
+100%{
+
+box-shadow:
+
+0 0 10px rgba(230,196,110,.3),
+
+0 0 25px rgba(230,196,110,.2);
+
+}
+
+}
+/* ===========================
+   STARFIELD
+=========================== */
+
+
+/* ===========================
+   MOUSE MAGIC
+=========================== */
+
+#mouse-glow{
+
+position:fixed;
+
+width:350px;
+
+height:350px;
+
+border-radius:50%;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(circle,
+
+rgba(110,92,255,.28),
+
+rgba(110,92,255,.08),
+
+transparent 70%);
+
+filter:blur(30px);
+
+transform:translate(-50%,-50%);
+
+z-index:1;
+
+transition:
+
+left .12s linear,
+
+top .12s linear;
+
+}
+@keyframes moonPulse{
+
+0%{
+
+transform:
+translateX(-50%)
+scale(1);
+
+filter:brightness(1);
+
+}
+
+50%{
+
+transform:
+translateX(-50%)
+scale(1.04);
+
+filter:brightness(1.15);
+
+}
+
+100%{
+
+transform:
+translateX(-50%)
+scale(1);
+
+filter:brightness(1);
+
+}
+
+}
